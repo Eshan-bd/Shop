@@ -11,6 +11,9 @@ public class Shop {
         shoppingCart.add(shampoo, 3);
         shoppingCart.add(coke, 7);
 
+        OrderDetails shampooOrder = shoppingCart.getItems().get(0);
+        shoppingCart.update(shampooOrder, 2);
+
         System.out.println(shoppingCart);
 
         Order order = shoppingCart.getOrder();

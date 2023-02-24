@@ -4,7 +4,6 @@ import java.util.List;
 public class Cart {
     private List<OrderDetails> items;
     private double totalCost;
-
     public List<OrderDetails> getItems() {
         return items;
     }
@@ -23,6 +22,12 @@ public class Cart {
     public void remove(OrderDetails item){
         items.remove(item);
         totalCost -= item.getPrice();
+    }
+
+    public void update(OrderDetails item, int quantity){
+        totalCost -= item.getPrice();
+        item.setQuantity(quantity);
+        totalCost += item.getPrice();
     }
 
     public double getTotalCost() {

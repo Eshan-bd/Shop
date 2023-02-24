@@ -4,7 +4,7 @@ public class Order {
     private final double totalCost;
     private final List<OrderDetails> items;
     private String address;
-    private final double vat = 0.15;
+    private static double vat = 0.07;
 
     public Order(List<OrderDetails> items, double totalCost) {
         this.items = items;
@@ -34,5 +34,13 @@ public class Order {
                 ", items=" + items +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    public static double getVat() {
+        return vat;
+    }
+
+    public static void setVat(double v) {
+        vat = v;
     }
 }
